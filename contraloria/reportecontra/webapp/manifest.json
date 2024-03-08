@@ -1,0 +1,155 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "urn.udp.contraloria.reportecontra",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.12.4",
+      "toolsId": "b8101521-de37-4909-b200-e49d47892efb"
+    },
+    "dataSources": {
+        "mainService": {
+            "uri": "/sap/opu/odata/sap/ZGW_CURSO_FIORI_SRV/",
+            "type": "OData",
+            "settings": {
+                "annotations": [],
+                "localUri": "localService/metadata.xml",
+                "odataVersion": "2.0",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0",
+                    "defaultBindingMode": "TwoWay",
+                    "defaultUpdateMethod": "sap.ui.model.odata.UpdateMethod.Put",
+                    "disableHeadRequestForToken": true,
+                    "useBatch": false,
+                    "json": true
+                }
+            }
+        }
+    },
+    "crossNavigation": {
+        "inbounds": {
+            "neoris-cursos-fiori-horarioslibres-inbound": {
+                "signature": {
+                    "parameters": {},
+                    "additionalParameters": "allowed"
+                },
+                "semanticObject": "HU19",
+                "action": "display",
+                "title": "{{flpTitle}}",
+                "subTitle": "{{flpSubtitle}}",
+                "icon": ""
+            }
+        }
+    }
+    },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.9",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "urn.udp.contraloria.reportecontra.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false,
+          "metadataUrlParams": {
+            "sap-value-list": "none",
+            "saml2": "disabled"
+          }
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "urn.udp.contraloria.reportecontra.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "urn.udp.contraloria.reportecontra.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  
+	}
+}

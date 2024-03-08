@@ -1,0 +1,205 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    controllerName="urn.udp.contraloria.reportecontra.controller.View1"
+    displayBlock="true"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Panel
+                id="datePanel"
+                headerText="Busqueda de Notificaciones"
+                width="auto"
+            >
+                <l:VerticalLayout
+                    class="sapUiContentPadding"
+                    width="100%"
+                >
+                    <Input
+                        description="Rut"
+                        value=""
+						id="txtrut"
+                        
+                        width="200px"
+                        fieldWidth="80%"
+                        class="sapUiSmallMarginBottom"
+                    />
+                   
+				    <Button text="Buscar" press="buscarvalores" />
+				
+				
+                </l:VerticalLayout>
+                <Table
+                    noDataText="Drop column list items here and columns in the area above"
+                    id="table0"
+                    items="{notificaciones>/}"
+                >
+                    <items>
+                        <ColumnListItem
+                            type="Active"
+                            id="item0"
+                        >
+                            <cells>
+                                <Text
+                                    text="{notificaciones>ZetipoAlerta}"
+                                    id="ZetipoAlerta"
+                                />
+                                <Text
+                                    text="{notificaciones>ZfiRutdec}"
+                                    id="ZfiRutdec"
+                                />
+                                <Text
+                                    text="{notificaciones>Stcd1}"
+                                    id="Stcd1"
+                                />
+                                <Text
+                                    text="{notificaciones>Lifnr}"
+                                    id="Lifnr"
+                                />
+                                
+                                <Text
+                                    text="{notificaciones>Erdat}"
+                                    id="Erdat"
+                                />
+                                <Text
+                                    text="{notificaciones>Uzeit}"
+                                    id="Uzeit"
+                                />
+                                <Text
+                                    text="{notificaciones>Belnr}"
+                                    id="Belnr"
+                                />
+                                <Text
+                                    text="{notificaciones>Xblnr}"
+                                    id="Xblnr"
+                                />
+                                <Text
+                                    text="{notificaciones>FechaInt}"
+                                    id="FechaInt"
+                                />
+                                <Text
+                                    text="{notificaciones>HorInt}"
+                                    id="HorInt"
+                                />
+                                <Text
+                                    text="{notificaciones>Mensaje}"
+                                    id="Mensaje"
+                                />
+                                <Text
+                                    text="{notificaciones>StatusInt}"
+                                    id="StatusInt"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                    <columns>
+                        <Column id="column0">
+                            <header>
+                                <Label
+                                    text="T Alerta"
+                                    id="label0"
+									
+                                />
+                            </header>
+                        </Column>
+                        <Column id="column1">
+                            <header>
+                                <Label
+                                    text="Rut Dec"
+                                    id="label1"
+                                />
+                            </header>
+                        </Column>
+                        <Column id="column2">
+                            <header>
+                                <Label
+                                    text="Rut"
+                                    id="label2"
+                                />
+                            </header>
+                        </Column>
+                        <Column id="column3">
+                            <header>
+                                <Label
+                                    text="Provee"
+                                    id="label3"
+                                />
+                            </header>
+                        </Column>
+                       
+                        <Column id="column5">
+                            <header>
+                                <Label
+                                    text="Fecha"
+                                    id="label5"
+                                />
+                            </header>
+                        </Column>
+                        <Column id="column6">
+                            <header>
+                                <Label
+                                    text="Hora"
+                                    id="label6"
+                                />
+                            </header>
+                        </Column>
+                        <Column id="column7">
+                            <header>
+                                <Label
+                                    text="Documento"
+                                    id="label7"
+                                />
+                            </header>
+                        </Column>
+                        
+                        <Column id="column16">
+                            <header>
+                                <Label
+                                    text="Ref Doc"
+                                    id="label0222"
+                                />
+                            </header>
+                        </Column>
+                        <Column id="column17">
+                            <header>
+                                <Label
+                                    text="FechaInt"
+                                    id="label022"
+                                />
+                            </header>
+                        </Column>
+                        <Column id="column18">
+                            <header>
+                                <Label
+                                    text="HorInt"
+                                    id="label033"
+                                />
+                            </header>
+                        </Column>
+                        <Column id="column19">
+                            <header>
+                                <Label
+                                    text="Mensaje"
+                                    id="label044"
+                                />
+                            </header>
+                        </Column>
+                        <Column id="column20">
+                            <header>
+                                <Label
+                                    text="Est.Ind"
+                                    id="label0445"
+                                />
+                            </header>
+                        </Column>
+                    </columns>
+                </Table>
+                <content />
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
